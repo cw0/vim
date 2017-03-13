@@ -8,7 +8,6 @@ source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
-"try
 "source ~/.vim_runtime/my_configs.vim
 "catch
 "endtry
@@ -37,6 +36,16 @@ set hlsearch
 
 "show matching parenthesis
 set showmatch
+
+"Show hidden files in NerdTree
+let NERDTreeShowHidden=1
+
+"autopen NERDTree and focus cursor in new document
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+" Give a shortcut key to NERD Tree
+map <F2> :NERDTreeToggle<CR>
 
 "cancel search with escape
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
