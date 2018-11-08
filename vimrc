@@ -1,5 +1,5 @@
 "to install vimrc use the following command
-"$ ln -s ~/.vim/vimrc ~/.vimrc
+"$ ln -s ~/vim/vimrc ~/.vimrc
 
 set runtimepath+=~/.vim_runtime
 
