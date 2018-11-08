@@ -4,6 +4,7 @@
 
 call plug#begin('~/.config/nvim/plugged')
 " Plugins will go here in the middle.
+Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 "add a colored column at 90 so our files don't get too wide
@@ -30,3 +31,6 @@ set hlsearch
 
 "show matching parenthesis
 set showmatch
+
+"set colorscheme
+colorscheme srcery
