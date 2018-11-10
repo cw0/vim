@@ -27,6 +27,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mileszs/ack.vim'
 Plug 'tyok/nerdtree-ack'
 Plug 'honza/vim-snippets'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Airline
@@ -90,6 +91,8 @@ syntax on
 
 "set colorscheme
 "colorscheme jellybeans
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 
 "language features
 hi def link jsObjectKey Label
