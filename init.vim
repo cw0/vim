@@ -26,9 +26,21 @@ Plug 'garbas/vim-snipmate'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mileszs/ack.vim'
 Plug 'tyok/nerdtree-ack'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'honza/vim-snippets'
+Plug 'vim-syntastic/syntastic'
+Plug 'tomtom/tlib_vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'morhetz/gruvbox'
+Plug 'luochen1990/rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
+
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+let g:deoplete#enable_at_startup = 1
+
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -50,7 +62,6 @@ set mouse=a
 
 "background
 set background=dark
-
 
 set display+=lastline
 
@@ -75,6 +86,11 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
+
+set noswapfile
+filetype off
+
+set encoding=utf8
 
 "highlight found words when searching
 set hlsearch
@@ -110,6 +126,11 @@ set foldlevelstart=99
 " NERDTree settings
 noremap <leader>n :NERDTree <CR>
 noremap <leader>m :NERDTreeFind <CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " Vim JSX
 let g:jsx_ext_required = 0
@@ -158,3 +179,37 @@ nnoremap <Leader>a :Ack!<Space>
 
 " Ecs to close quickfix window
 nnoremap <silent> <ESC> :ccl<CR>
+
+"rainbow parenthesis
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowTogglea
+let g:rainbow_conf = {
+	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+	\	'ctermfgs': ['blue', 'yellow', 'cyan', 'magenta'],
+	\	'operators': '_,_',
+	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+	\	'separately': {
+	\		'*': {},
+	\		'tex': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+	\		},
+	\		'lisp': {
+	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+	\		},
+	\		'vim': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+	\		},
+	\		'html': {
+	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+	\		},
+	\		'css': 0,
+	\	}
+	\}
+
+filetype off
+filetype plugin indent on
+au BufNewFile,BufRead *.less set filetype=css
+au BufNewFile,BufRead *.coffee set filetype=coffee
+au BufNewFile,BufRead *.js set filetype=javascript.jsx
+
+"show hidden characters toggle
+nmap <leader>l :set list!<CR>
