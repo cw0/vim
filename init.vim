@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'garbas/vim-snipmate'
@@ -28,7 +29,7 @@ Plug 'mileszs/ack.vim'
 Plug 'tyok/nerdtree-ack'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'honza/vim-snippets'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic' "this does not work
 Plug 'tomtom/tlib_vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'morhetz/gruvbox'
@@ -88,7 +89,7 @@ set smartindent
 set autoindent
 
 set noswapfile
-filetype off
+"filetype off
 
 set encoding=utf8
 
@@ -102,8 +103,11 @@ set incsearch
 set showmatch
 
 "terminal colors and syntax highlighting
-"set t_Co=256
+set t_Co=256
 syntax on
+
+"disable lazy redraw
+"set nolazyredraw
 
 "set colorscheme
 "colorscheme jellybeans
@@ -126,11 +130,25 @@ set foldlevelstart=99
 " NERDTree settings
 noremap <leader>n :NERDTree <CR>
 noremap <leader>m :NERDTreeFind <CR>
-let NERDTreeQuitOnOpen = 1
+"let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+function! s:CloseIfOnlyControlWinLeft()
+  if winnr("$") != 1
+    return
+  endif
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        \ || &buftype == 'quickfix'
+    q
+  endif
+endfunction
+augroup CloseIfOnlyControlWinLeft
+  au!
+  au BufEnter * call s:CloseIfOnlyControlWinLeft()
+augroup END
 
 " Vim JSX
 let g:jsx_ext_required = 0
@@ -171,7 +189,7 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " Buffer Switching
 :noremap <C-n> :bnext<CR>
-:noremap <C-p> :bprevious<CR>
+:noremap <C-b> :bprevious<CR>
 :nmap <leader>d :bnext<CR>:bdelete #<CR>
 
 "ack
@@ -205,11 +223,11 @@ let g:rainbow_conf = {
 	\	}
 	\}
 
-filetype off
+"filetype off
 filetype plugin indent on
 au BufNewFile,BufRead *.less set filetype=css
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.js set filetype=javascript.jsx
 
 "show hidden characters toggle
-nmap <leader>l :set list!<CR>
+nmap <leader>l :set list! <CR>
