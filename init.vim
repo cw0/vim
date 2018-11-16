@@ -48,6 +48,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
+"neovim fix
+"set notimeout
+
 "add a colored column at 90 so our files don't get too wide
 set colorcolumn=120
 
@@ -176,10 +179,10 @@ set guifont=Menlo\ For\ Powerline
 
 " ALE
 let g:ale_linters = { 'javascript': ['eslint'] }
-let g:ale_sign_error = '🤮'
-let g:ale_sign_column_always = 1
-let g:ale_sign_warning = '🚩'
-let g:ale_statusline_format = ['🤮 %d', '🚩 %d', '']
+"let g:ale_sign_error = '🤮'
+"let g:ale_sign_column_always = 1
+"let g:ale_sign_warning = '🚩'
+"let g:ale_statusline_format = ['🤮 %d', '🚩 %d', '']
 
 " Vim Multiple Cursors
 let g:multi_cursor_use_default_mapping=0
