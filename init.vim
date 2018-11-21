@@ -35,6 +35,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'morhetz/gruvbox'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 let g:python2_host_prog = '/usr/local/bin/python'
@@ -84,15 +86,17 @@ set history=1000
 
 "indention settings
 filetype indent on
+filetype plugin on
+filetype plugin indent on
 set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set smartindent
 set autoindent
-
+set smartindent
+set preserveindent
+set copyindent
 set noswapfile
-"filetype off
 
 set encoding=utf8
 
@@ -228,10 +232,18 @@ let g:rainbow_conf = {
 	\}
 
 "filetype off
-filetype plugin indent on
+"filetype plugin indent on
 au BufNewFile,BufRead *.less set filetype=css
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.js set filetype=javascript.jsx
 
 "show hidden characters toggle
 nmap <leader>l :set list! <CR>
+
+"move lines up and down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
