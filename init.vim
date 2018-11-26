@@ -37,6 +37,7 @@ Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
+Plug 'moll/vim-node'
 call plug#end()
 
 let g:python2_host_prog = '/usr/local/bin/python'
