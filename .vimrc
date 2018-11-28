@@ -1,6 +1,11 @@
+"to install vimrc use the following command
+"$ ln -s ~/vim/.vimrc ~/.vimrc
 
-"to install init.vim use the following command
-"$ ln -s ~/vim/init.vim ~/.config/nvim/init.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('~/.config/nvim/plugged')
 " Plugins will go here in the middle.
@@ -31,13 +36,12 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'honza/vim-snippets'
 "Plug 'vim-syntastic/syntastic' "this does not work
 Plug 'tomtom/tlib_vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'morhetz/gruvbox'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pangloss/vim-javascript'
-Plug 'jiangmiao/auto-pairs'
-Plug 'moll/vim-node'
 call plug#end()
 
 let g:python2_host_prog = '/usr/local/bin/python'
@@ -50,9 +54,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
-
-"neovim fix
-"set notimeout
 
 "add a colored column at 90 so our files don't get too wide
 set colorcolumn=120
@@ -87,18 +88,15 @@ set history=1000
 
 "indention settings
 filetype indent on
-filetype plugin on
-filetype plugin indent on
 set nowrap
 set tabstop=2
-set softtabstop=2
 set shiftwidth=2
 set expandtab
-set autoindent
 set smartindent
-set preserveindent
-set copyindent
+set autoindent
+
 set noswapfile
+"filetype off
 
 set encoding=utf8
 
@@ -114,7 +112,6 @@ set showmatch
 "terminal colors and syntax highlighting
 set t_Co=256
 syntax on
-set syn=auto
 
 "disable lazy redraw
 "set nolazyredraw
@@ -186,10 +183,10 @@ set guifont=Menlo\ For\ Powerline
 
 " ALE
 let g:ale_linters = { 'javascript': ['eslint'] }
-"let g:ale_sign_error = '🤮'
-"let g:ale_sign_column_always = 1
-"let g:ale_sign_warning = '🚩'
-"let g:ale_statusline_format = ['🤮 %d', '🚩 %d', '']
+let g:ale_sign_error = '🤮'
+let g:ale_sign_column_always = 1
+let g:ale_sign_warning = '🚩'
+let g:ale_statusline_format = ['🤮 %d', '🚩 %d', '']
 
 " Vim Multiple Cursors
 let g:multi_cursor_use_default_mapping=0
@@ -234,6 +231,8 @@ let g:rainbow_conf = {
 	\	}
 	\}
 
+"filetype off
+filetype plugin indent on
 au BufNewFile,BufRead *.less set filetype=css
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.js set filetype=javascript.jsx
@@ -241,20 +240,5 @@ au BufNewFile,BufRead *.js set filetype=javascript.jsx
 "show hidden characters toggle
 nmap <leader>l :set list! <CR>
 
-"move lines up and down on non mac computers
-"nnoremap <A-j> :m .+1<CR>==
-"nnoremap <A-k> :m .-2<CR>==
-"inoremap <A-j> <Esc>:m .+1<CR>==gi
-"inoremap <A-k> <Esc>:m .-2<CR>==gi
-"vnoremap <A-j> :m '>+1<CR>gv=gv
-"vnoremap <A-k> :m '<-2<CR>gv=gv
-
-"move lines up and down on mac
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
-
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
+"obnoxious arrow key fix
+set nocp
