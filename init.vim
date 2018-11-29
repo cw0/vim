@@ -40,6 +40,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
 Plug 'moll/vim-node'
 Plug 'janko-m/vim-test'
+Plug 'ahw/vim-pbcopy'
 call plug#end()
 
 let g:python2_host_prog = '/usr/local/bin/python'
