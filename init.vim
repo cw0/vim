@@ -9,7 +9,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'mxw/vim-jsx'
+"Plug 'mxw/vim-jsx' "breaks indentation
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -164,7 +164,7 @@ augroup CloseIfOnlyControlWinLeft
 augroup END
 
 " Vim JSX
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 " CtrlP
 let g:ctrlp_map = '<C-p>' 
