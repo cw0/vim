@@ -4,45 +4,60 @@
 
 call plug#begin('~/.config/nvim/plugged')
 " Plugins will go here in the middle.
+
+" Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+
+" Development
+Plug 'w0rp/ale'
+Plug 'moll/vim-node'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-projectionist'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+"Plug 'vim-syntastic/syntastic' 
+
+" Editing
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'garbas/vim-snipmate'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-commentary'
+
+" Appearance
 Plug 'ryanoasis/vim-devicons'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'luochen1990/rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Valloric/MatchTagAlways'
+
+" File Managment
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'mxw/vim-jsx' "breaks indentation
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'nanotech/jellybeans.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'groenewege/vim-less'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'airblade/vim-gitgutter'
-Plug 'garbas/vim-snipmate'
-Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mileszs/ack.vim'
 Plug 'tyok/nerdtree-ack'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'honza/vim-snippets'
-"Plug 'vim-syntastic/syntastic' "this does not work
-Plug 'tomtom/tlib_vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'morhetz/gruvbox'
-Plug 'luochen1990/rainbow'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pangloss/vim-javascript'
-Plug 'jiangmiao/auto-pairs'
-Plug 'moll/vim-node'
-Plug 'janko-m/vim-test'
+
+" Motion
+Plug 'Lokaltog/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'ahw/vim-pbcopy'
-Plug 'alvan/vim-closetag'
-Plug 'Valloric/MatchTagAlways'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Dependencies
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 call plug#end()
 
 let g:python2_host_prog = '/usr/local/bin/python'
