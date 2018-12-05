@@ -21,13 +21,16 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " Editing
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'alvan/vim-closetag'
 Plug 'garbas/vim-snipmate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 "Plug 'junegunn/vim-easy-align' "not configured
-Plug 'ahw/vim-pbcopy'
+"Plug 't9md/vim-textmanip' "not configured 
+Plug 'chrisbra/NrrwRgn' "isolate batch edits to a specific selection with :NR
+Plug 'ahw/vim-pbcopy' "copy to os clipboard with cy in visual mode
 
 " Appearance
 Plug 'ryanoasis/vim-devicons'
