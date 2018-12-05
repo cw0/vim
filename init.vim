@@ -16,7 +16,7 @@ Plug 'moll/vim-node'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-"Plug 'vim-syntastic/syntastic' 
+"Plug 'vim-syntastic/syntastic' "unused
 
 " Editing
 Plug 'tpope/vim-surround'
@@ -26,6 +26,8 @@ Plug 'garbas/vim-snipmate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
+"Plug 'junegunn/vim-easy-align' "not configured
+Plug 'ahw/vim-pbcopy'
 
 " Appearance
 Plug 'ryanoasis/vim-devicons'
@@ -36,6 +38,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/MatchTagAlways'
+Plug 'tpope/vim-sensible'  "smart defaults for basic settings
 
 " File Managment
 Plug 'scrooloose/nerdtree'
@@ -44,11 +47,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tyok/nerdtree-ack'
+"Plug 'jeetsukumaran/vim-buffergator' "not configured
 
 " Motion
 Plug 'Lokaltog/vim-easymotion'
+Plug 'rhysd/accelerated-jk'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ahw/vim-pbcopy'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -59,6 +63,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 call plug#end()
+
+"accelerated jk
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
 
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
