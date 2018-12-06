@@ -266,17 +266,41 @@ let g:ale_linters = { 'javascript': ['eslint'] }
 "let g:ale_sign_warning = '🚩'
 "let g:ale_statusline_format = ['🤮 %d', '🚩 %d', '']
 
+
 " Vim Multiple Cursors
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-l>'
-let g:multi_cursor_prev_key='<C-h>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+" I disabled these bindings until i finish setting up buffer controls
+"
+"let g:multi_cursor_use_default_mapping=0
+"let g:multi_cursor_next_key='<C-l>'
+"let g:multi_cursor_prev_key='<C-h>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
+
 
 " Buffer Switching
-:noremap <C-n> :bnext<CR>
-:noremap <C-b> :bprevious<CR>
-:nmap <leader>d :bnext<CR>:bdelete #<CR>
+"
+" open a new empty buffer
+" This replaces :tabnew
+"nmap <Leader>T :enew<cr>
+nmap <Leader>t :enew<CR>
+
+" Move to the next buffer
+nmap <Leader>l :bnext<CR>
+nmap <Leader>] :bnext<CR>
+
+" Move to the previous buffer
+nmap <Leader>h :bprevious<CR>
+nmap <Leader>[ :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <Leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <Leader>bl :ls<CR>
+
+" nmap <leader>d :bnext<CR>:bdelete #<CR>
+
 
 "ack
 nnoremap <Leader>a :Ack!<Space>
@@ -333,3 +357,11 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
+
+"
+" Action: Move around window splits using alt+(h|j|k|l)
+"
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-l> :wincmd l<CR>
