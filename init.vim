@@ -31,6 +31,7 @@ Plug 'tpope/vim-commentary'
 "Plug 't9md/vim-textmanip' "not configured 
 Plug 'chrisbra/NrrwRgn' "isolate batch edits to a specific selection with :NR
 Plug 'ahw/vim-pbcopy' "copy to os clipboard with cy in visual mode
+Plug 'matze/vim-move'
 
 " Appearance
 Plug 'ryanoasis/vim-devicons'
@@ -359,14 +360,14 @@ nmap <leader>l :set list! <CR>
 "vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "move lines up and down on mac
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
+"nnoremap ∆ :m .+1<CR>==
+"nnoremap ˚ :m .-2<CR>==
 
 inoremap ∆ <Esc>:m .+1<CR>==gi
 inoremap ˚ <Esc>:m .-2<CR>==gi
 
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
+"vnoremap ∆ :m '>+1<CR>gv=gv
+"vnoremap ˚ :m '<-2<CR>gv=gv
 
 "
 " Action: Move around window splits using alt+(h|j|k|l)
@@ -404,3 +405,19 @@ map <C-S-D> :tabclose<CR>
 "nnoremap tm  :tabm<Space>
 "nnoremap td  :tabclose<CR>
 
+"Vim-move
+" Visual Mode alt+j moves selected block down
+vmap ∆ <Plug>MoveBlockDown
+" vmap <D-j> <Plug>MoveBlockDown
+
+" Visual Mode alt+k moves selected block up
+vmap ˚ <Plug>MoveBlockUp
+" vmap <D-k> <Plug>MoveBlockUp
+
+" alt+j Move current line down
+nmap ∆ <plug>MoveLineDown
+" nmap <D-j> <plug>MoveLineDown
+
+" alt+k Move current line up
+nmap ˚ <Plug>MoveLineUp
+" nmap <D-k> <Plug>MoveLineUp
