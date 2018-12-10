@@ -55,7 +55,7 @@ Plug 'tyok/nerdtree-ack'
 " Motion
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rhysd/accelerated-jk'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors' "not configured
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -261,6 +261,8 @@ set guifont=Menlo\ For\ Powerline
 
 " ALE
 let g:ale_linters = { 'javascript': ['eslint'] }
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 "let g:ale_sign_error = '🤮'
 "let g:ale_sign_column_always = 1
 "let g:ale_sign_warning = '🚩'
@@ -401,3 +403,4 @@ map <C-S-D> :tabclose<CR>
 "nnoremap tn  :tabnext<Space>
 "nnoremap tm  :tabm<Space>
 "nnoremap td  :tabclose<CR>
+
