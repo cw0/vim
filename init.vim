@@ -20,6 +20,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'majutsushi/tagbar'
 "Plug 'vim-syntastic/syntastic' "unused
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " Editing
 Plug 'tpope/vim-surround'
@@ -83,9 +84,38 @@ call plug#end()
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+" ***************
+"
+" Language Server
+"
+" ***************
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-langserver'],
+    \ 'javascript.jsx': ['javascript-typescript-langserver'],
+    \ 'css': ['vscode-css-languageserver-bin'],
+    \ }
+
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone,preview
+
+" omnifuncs
+augroup omnifuncs
+    autocmd!
+    autocmd FileType css,scss,sass,less setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType jsx,js setlocal omnifunc=javascriptcomplete#CompleteJS " removed javascript before jsx
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  augroup end
+
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case  = 1
 
 let g:indent_guides_enable_on_vim_startup = 1
 
