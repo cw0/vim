@@ -9,6 +9,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
+Plug 'stephpy/vim-yaml'
+Plug 'larsbs/vim-xmll'
 
 " Development
 Plug 'w0rp/ale'
@@ -61,7 +63,11 @@ Plug 'tyok/nerdtree-ack'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/ZoomWin'
 Plug 'rhysd/accelerated-jk'
+Plug 'terryma/vim-expand-region' 
+Plug 'coderifous/textobj-word-column.vim'
+Plug 'junegunn/vim-easy-align'
 "Plug 'terryma/vim-multiple-cursors' "not configured
+"Plug 'wellle/targets.vim' "lets learn default movements better first
 
 " Git
 Plug 'tpope/vim-fugitive'
