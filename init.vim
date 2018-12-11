@@ -20,7 +20,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'majutsushi/tagbar'
 "Plug 'vim-syntastic/syntastic' "unused
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' } 
 
 " Editing
 Plug 'tpope/vim-surround'
@@ -86,18 +86,28 @@ nmap k <Plug>(accelerated_jk_gk)
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_loggingLevel = 'INFO'
+let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
+let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
 
 " ***************
 "
 " Language Server
 "
 " ***************
-
+"
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-langserver'],
-    \ 'javascript.jsx': ['javascript-typescript-langserver'],
-    \ 'css': ['vscode-css-languageserver-bin'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ }
+
+"let g:LanguageClient_serverCommands = {
+"    \ 'javascript': ['javascript-typescript-langserver'],
+"    \ 'javascript.jsx': ['javascript-typescript-langserver'],
+"    \ }
+
+" add to above once javascript completion is working
+"    \ 'css': ['vscode-css-languageserver-bin'],
 
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview
