@@ -16,6 +16,7 @@ Plug 'moll/vim-node'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'majutsushi/tagbar'
 "Plug 'vim-syntastic/syntastic' "unused
 
 " Editing
@@ -32,6 +33,8 @@ Plug 'tpope/vim-commentary'
 Plug 'chrisbra/NrrwRgn' "isolate batch edits to a specific selection with :NR
 Plug 'ahw/vim-pbcopy' "copy to os clipboard with cy in visual mode
 Plug 'matze/vim-move'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdcommenter'
 
 " Appearance
 Plug 'ryanoasis/vim-devicons'
@@ -43,6 +46,7 @@ Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-sensible'  "smart defaults for basic settings
+Plug 'elzr/vim-json'
 
 " File Managment
 Plug 'scrooloose/nerdtree'
@@ -55,6 +59,7 @@ Plug 'tyok/nerdtree-ack'
 
 " Motion
 Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-scripts/ZoomWin'
 Plug 'rhysd/accelerated-jk'
 "Plug 'terryma/vim-multiple-cursors' "not configured
 
@@ -421,3 +426,16 @@ nmap ∆ <plug>MoveLineDown
 " alt+k Move current line up
 nmap ˚ <Plug>MoveLineUp
 " nmap <D-k> <Plug>MoveLineUp
+
+nmap <Leader>rt :TagbarToggle<CR>
+
+" zoom windows
+nmap <leader>zw :ZoomWin
+
+" git stuff
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gl :Glog<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gp :Git push<CR>
