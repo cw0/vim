@@ -10,4 +10,4 @@ npm install -g javascript-typescript-langserver
 
 :CocInstall coc-tsserver
 
-cp coc-settings.json /.config/nvim/coc-settings.json
+cp coc-settings.json ~/.config/nvim/coc-settings.json
