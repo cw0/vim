@@ -6,7 +6,7 @@ brew install ack
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
 
-npm install -g javascript-typescript-langserver
+npm install -g yarn
 
 :CocInstall coc-tsserver
 
