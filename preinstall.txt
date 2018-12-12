@@ -7,3 +7,5 @@ brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
 
 npm install -g javascript-typescript-langserver
+
+:CocInstall coc-tsserver
