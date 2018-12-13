@@ -19,8 +19,6 @@ Plug 'janko-m/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'majutsushi/tagbar'
-"Plug 'vim-syntastic/syntastic' "unused
-"Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' } 
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Editing
@@ -29,7 +27,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'alvan/vim-closetag'
 Plug 'garbas/vim-snipmate'
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 "Plug 'junegunn/vim-easy-align' "not configured
@@ -81,39 +78,13 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 call plug#end()
 
+" clear search with escape
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 "accelerated jk
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
-
-" Automatically start language servers.
-"let g:LanguageClient_autoStart = 1
-"let g:LanguageClient_loggingLevel = 'INFO'
-"let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
-"let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
-
-"TODO come up with better bindings 
-"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-
-" ***************
-"
-" Language Server
-"
-" ***************
-"
-"let g:LanguageClient_serverCommands = {
-"    \ 'javascript': ['javascript-typescript-stdio'],
-"    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-"    \ }
-
-"let g:LanguageClient_serverCommands = {
-"    \ 'javascript': ['javascript-typescript-langserver'],
-"    \ 'javascript.jsx': ['javascript-typescript-langserver'],
-"    \ }
-
-" add to above once javascript completion is working
-"    \ 'css': ['vscode-css-languageserver-bin'],
 
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview
@@ -129,9 +100,6 @@ augroup omnifuncs
 
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#enable_ignore_case = 1
-"let g:deoplete#enable_smart_case  = 1
 
 let g:indent_guides_enable_on_vim_startup = 1
 
@@ -248,6 +216,9 @@ set showmatch
 set t_Co=256
 syntax on
 set syn=auto
+
+"set hidden characters
+set list listchars=tab:>\ ,trail:-,eol:$
 
 "disable lazy redraw
 "set nolazyredraw
@@ -535,7 +506,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
