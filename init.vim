@@ -78,9 +78,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 call plug#end()
 
-" clear search with escape
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
 
 "accelerated jk
 nmap j <Plug>(accelerated_jk_gj)
@@ -219,6 +218,7 @@ set syn=auto
 
 "set hidden characters
 set list listchars=tab:>\ ,trail:-,eol:$
+set list!
 
 "disable lazy redraw
 "set nolazyredraw
