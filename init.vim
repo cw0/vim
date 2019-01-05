@@ -65,7 +65,7 @@ Plug 'rhysd/accelerated-jk'
 Plug 'terryma/vim-expand-region' 
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'junegunn/vim-easy-align'
-"Plug 'terryma/vim-multiple-cursors' "not configured
+Plug 'terryma/vim-multiple-cursors' "not configured
 "Plug 'wellle/targets.vim' "lets learn default movements better first
 
 " Git
@@ -461,7 +461,7 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gl :Glog<CR>
 nmap <leader>gc :Gcommit<CR>
-nmap <leader>gp :Git push<CR>
+nmap <leader>gp :Gpush<CR>
 
 "COC settings
 " Use tab for trigger completion with characters ahead and navigate.
