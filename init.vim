@@ -6,10 +6,11 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugins will go here in the middle.
 
 " Syntax
+"Plug 'MaxMEllon/vim-jsx-pretty'
+"Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-Plug 'groenewege/vim-less'
-Plug 'stephpy/vim-yaml'
 Plug 'larsbs/vim-xmll'
 
 " Development
@@ -17,7 +18,7 @@ Plug 'w0rp/ale'
 Plug 'moll/vim-node'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-projectionist'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+"(delete?)Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
@@ -46,7 +47,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/MatchTagAlways'
-Plug 'tpope/vim-sensible'  "smart defaults for basic settings
+"(temp)Plug 'tpope/vim-sensible'  "smart defaults for basic settings
 Plug 'elzr/vim-json'
 
 " File Managment
@@ -265,7 +266,7 @@ augroup CloseIfOnlyControlWinLeft
 augroup END
 
 " Vim JSX
-" let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0
 
 " CtrlP
 let g:ctrlp_map = '<C-p>' 
@@ -571,3 +572,7 @@ let g:terminal_color_14 = '#8ec07c'
 " light4 + light1
 let g:terminal_color_7 = '#a89984'
 let g:terminal_color_15 = '#ebdbb2'
+
+" disable vim polyglot jsx
+let g:polyglot_disabled = ['jsx', 'javascript']
+
