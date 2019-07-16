@@ -420,8 +420,9 @@ map <C-7> 7gt
 map <C-8> 8gt
 map <C-9> 9gt
 map <C-0> :tablast<CR>
-map <C-S-T> :tabnew<CR>
-map <C-S-D> :tabclose<CR>
+"TODO remap the following
+"map <C-S-T> :tabnew<CR>
+"map <C-S-D> :tabclose<CR>
 
 "removed because i dont want to overwrite default vim commands
 "nnoremap th  :tabfirst<CR>
