@@ -57,8 +57,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tyok/nerdtree-ack'
 "Plug 'jeetsukumaran/vim-buffergator' "not configured
+"Plug 'mhinz/vim-startify' "vim start page
 
-" Motion
+"Motion
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/ZoomWin'
 Plug 'rhysd/accelerated-jk'
@@ -574,5 +575,5 @@ let g:terminal_color_7 = '#a89984'
 let g:terminal_color_15 = '#ebdbb2'
 
 " disable vim polyglot jsx
-let g:polyglot_disabled = ['jsx', 'javascript']
+let g:polyglot_disabled = ['jsx', 'javascript', 'javascript.jsx']
 
