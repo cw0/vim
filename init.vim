@@ -14,7 +14,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'larsbs/vim-xmll'
 
 " Development
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'moll/vim-node'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-projectionist'
