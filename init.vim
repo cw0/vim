@@ -44,6 +44,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+Plug 'caksoylar/vim-mysticaltutor'
+Plug 'nightsense/seabird'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-sensible'  "smart defaults for basic settings
@@ -215,8 +217,17 @@ set incsearch
 "show matching parenthesis
 set showmatch
 
-"terminal colors and syntax highlighting
-set t_Co=256
+"relative line numbers
+" set relativenumber
+
+"highlight current line:
+set cursorline
+
+"terminal colors
+"set t_Co=256
+set termguicolors
+
+"syntax setup
 syntax on
 set syn=auto
 
@@ -230,7 +241,13 @@ set list!
 "set colorscheme
 "colorscheme jellybeans
 colorscheme gruvbox
+"colorscheme mysticaltutor
+"colorscheme petrel
 let g:gruvbox_contrast_dark = 'hard'
+hi Normal ctermbg=none
+hi Terminal ctermbg=none
+hi Terminal guibg=none
+hi Normal guibg=none
 
 "language features
 hi def link jsObjectKey Label
