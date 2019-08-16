@@ -37,8 +37,9 @@ Plug 'ahw/vim-pbcopy' "copy to os clipboard with cy in visual mode
 Plug 'matze/vim-move'
 "Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
+Plug 'schickling/vim-bufonly' "close all but targeted buffer
 
-" Appearance
+"Appearance
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
