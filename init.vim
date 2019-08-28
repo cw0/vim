@@ -461,7 +461,7 @@ nmap <leader>zw :ZoomWin
 " git stuff
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gd :Gvdiff<CR>
+nmap <leader>gd :Gdiffsplit!<CR>
 nmap <leader>gl :Glog<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Gpush<CR>
