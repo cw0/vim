@@ -82,9 +82,9 @@ Plug 'tomtom/tlib_vim'
 call plug#end()
 
 "histogram mode for diffs
-" if has('nvim-0.3.2') || has("patch-8.1.0360")
-"     set diffopt=filler,internal,algorithm:histogram,indent-heuristic
-" endif
+ if has('nvim-0.3.2') || has("patch-8.1.0360")
+     set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+ endif
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
@@ -461,7 +461,7 @@ nmap <leader>zw :ZoomWin
 " git stuff
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gd :Gdiffsplit!<CR>
+nmap <leader>gd :Gvdiff<CR>
 nmap <leader>gl :Glog<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Gpush<CR>
