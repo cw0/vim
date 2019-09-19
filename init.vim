@@ -271,11 +271,21 @@ set foldlevelstart=99
 " NERDTree settings
 noremap <leader>n :NERDTree <CR>
 noremap <leader>m :NERDTreeFind <CR>
-"let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+
+"open nerdtree on start if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"open nerdtree if a directory is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+"always open nerdtree
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 function! s:CloseIfOnlyControlWinLeft()
   if winnr("$") != 1
