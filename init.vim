@@ -271,7 +271,7 @@ set foldlevelstart=99
 " NERDTree settings
 noremap <leader>n :NERDTree <CR>
 noremap <leader>m :NERDTreeFind <CR>
-let NERDTreeQuitOnOpen = 1
+" let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
