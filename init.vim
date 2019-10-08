@@ -593,10 +593,5 @@ let g:terminal_color_15 = '#ebdbb2'
 " disable vim polyglot jsx
 let g:polyglot_disabled = ['jsx', 'javascript', 'javascript.jsx']
 
-" show full errors
-" \cc
-map <Leader>cc :cwindow<CR>:cc<CR><c-w>bz<CR><CR>
-" \cn
-map <Leader>cn :cwindow<CR>:cn<CR><c-w>bz<CR><CR>
-" \cp
-map <Leader>cp :cwindow<CR>:cp<CR><c-w>bz<CR><CR>
+"run command on line and paste output in buffer
+nnoremap <Leader>rl :r!<C-r><C-l><CR>
