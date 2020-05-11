@@ -598,3 +598,12 @@ let g:polyglot_disabled = ['jsx', 'javascript', 'javascript.jsx']
 
 "run command on line and paste output in buffer
 nnoremap <Leader>rl :r!<C-r><C-l><CR>
+
+"===========================================
+"vim-test
+"===========================================
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
