@@ -11,6 +11,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'larsbs/vim-xmll'
+Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -52,7 +53,6 @@ Plug 'nightsense/seabird'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-sensible'  "smart defaults for basic settings
-Plug 'elzr/vim-json'
 
 " File Managment
 Plug 'scrooloose/nerdtree'
